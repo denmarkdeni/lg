@@ -912,7 +912,7 @@ p  { color: var(--clr-text-muted); }
 }
 .cta-banner h2 { color: #fff; margin-bottom: 14px; }
 .cta-banner p  { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 32px; }
-.cta-banner .btn-group { justify-content: center; }
+.cta-banner .btn-group { justify-content: center;align-items: center; }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -1528,6 +1528,7 @@ p  { color: var(--clr-text-muted); }
 .reels-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-columns: repeat(3, 1fr); */
   gap: 28px;
   max-width: var(--max-w);
   margin-inline: auto;
@@ -1555,6 +1556,7 @@ p  { color: var(--clr-text-muted); }
   background: #fafafa;
   display: flex;
   align-items: stretch;
+  justify-content: center;
 }
 .reel-frame .instagram-media {
   width: 100% !important;
@@ -1590,11 +1592,11 @@ p  { color: var(--clr-text-muted); }
   background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-@media (max-width: 768px) {
+/* @media (max-height: 750px) {
   .reels-grid { grid-template-columns: repeat(2, 1fr); }
   .reel-frame  { min-height: 420px; }
-}
-@media (max-width: 400px) {
+} */
+@media (max-width: 500px) {
   .reels-grid { grid-template-columns: 1fr; }
   .reel-frame  { min-height: 380px; }
 }
