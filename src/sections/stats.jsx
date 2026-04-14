@@ -7,7 +7,7 @@ const TRUST_CARDS = [
   { icon: <FaCheckCircle size={24} />,   value: "100%",  label: "Placement Support",  cls: "c-amber" },
 ];
 
-function Stats({ onBookDemo, onApply }) {
+function Stats({ onBookDemo, onApply , page , openPopup }) {
   return (
     <section className="section intro" id="intro">
       <div className="intro-badge reveal">
@@ -35,10 +35,10 @@ function Stats({ onBookDemo, onApply }) {
       </div>
 
       <div className="cta-duo reveal">
-        <button className="btn-p" onClick={() => onBookDemo("Home - Book Free Demo")}>
+        <button className="btn-p" onClick={() => openPopup({ heading: `Book Free Demo Class`, btnText: "Book now", formType: `${page} Book Demo` })}>
           <FaCalendarAlt size={15} /> Book Free Demo Class
         </button>
-        <button className="btn-s" onClick={() => onApply("Home - Apply Now")}>
+        <button className="btn-s" onClick={() => openPopup({ heading: `Apply Now for your Profession`, btnText: "Apply now", formType: `${page} Demo Apply` })}>
           <FaPencilAlt size={14} /> Apply Now
         </button>
       </div>

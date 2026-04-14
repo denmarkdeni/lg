@@ -1,9 +1,5 @@
-import { useState } from "react";
-import LeadForm from "../components/lead_form";
 
-const Pricing = ({course}) => {
-      
-      const [popup, setPopup] = useState(null);
+const Pricing = ({page , openPopup}) => {
       
     return(
       <section className="section" id="offer">
@@ -31,21 +27,17 @@ const Pricing = ({course}) => {
                 'Lifetime Alumni Community Access',
               ].map((f) => <li key={f}>{f}</li>)}
             </ul>
-            <a className="btn btn-accent btn-lg" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setPopup({ heading: `Enroll in ${course}`, btnText: "Book My Seat", formType: `${course} enroll` })}>
+            <a 
+            className="btn btn-accent btn-lg" 
+            style={{ width: '100%', justifyContent: 'center' }} 
+            onClick={() => openPopup({ heading: `Enroll for Future`, btnText: "Book My Seat", formType: `${page} enroll` })}
+            >
               Enroll Now
             </a>
             <p className="pricing-note">EMI options available. No hidden fees.</p>
           </div>
         </div>
-            
-        {popup && (
-          <LeadForm
-            isPopup={true}
-            config={popup}
-            onClose={() => setPopup(null)}
-          />
-        )}
-                    
+              
       </section>
     )
 }

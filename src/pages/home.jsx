@@ -19,25 +19,34 @@ import Feedback from '../sections/feedback.jsx';
 import Classrooms from '../sections/classrooms.jsx';
 import Projects from '../sections/projects.jsx';
 import Branches from '../sections/branches.jsx';
+import { usePopup } from '../hooks/usePopup.js';
+import LeadForm from "../components/lead_form"; 
 
 export default function HomePage() {
+  const page = "Home Page";
+  const { popup, openPopup, closePopup } = usePopup();
   return (  
     <>    
       <HeroVideo />
-      <Stats />
+      <Stats page={page} openPopup={openPopup}/>
       <Placements /> 
       <WhyLogin /> 
       <Feedback  />
       <PlacementSupport />
       <Classrooms />
-      <Pricing course="Home"/>
-      <Projects onCta={(src) => openPopup(src)} />
+      <Pricing page={page} openPopup={openPopup}/>
+      <Projects page={page} openPopup={openPopup}/>
       <BatchDetails />
       <FAQ /> 
       <Branches /> 
-      <ContactBanner />
+      <ContactBanner page={page} openPopup={openPopup}/>
       <Footer />
       <WhatsappFloat />
+      
+      {popup && (
+        <LeadForm isPopup={true} config={popup} onClose={closePopup} />
+      )}
+      
     </>
   );
 }

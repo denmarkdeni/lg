@@ -34,7 +34,7 @@ function DemoCard({ id, label }) {
   );
 }
 
-function Projects({ onCta }) {
+function Projects({ page, openPopup }) {
   return (
     <section className="section" id="projects">
       <div className="section-head reveal">
@@ -63,7 +63,7 @@ function Projects({ onCta }) {
       <div className="proj-cta reveal">
         <button
           className="btn-g"
-          onClick={() => onCta("Home - Start Building Projects")}
+          onClick={() => openPopup({ heading: `Start Building Projects Today`, btnText: "Start Today", formType: `${page} Start Today` })}
         >
           🚀 Start Building Projects Today
         </button>

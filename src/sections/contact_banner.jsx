@@ -1,6 +1,6 @@
 import { FaGraduationCap, FaPhone, FaWhatsapp } from 'react-icons/fa';
 
-const ContactBanner = () => {
+const ContactBanner = ({page , openPopup}) => {
     return(
         <section className="cta-banner" id="final-cta">
             <div className="container">
@@ -10,7 +10,7 @@ const ContactBanner = () => {
                 Book your demo class now.
             </p>
             <div className="btn-group">
-                <a href="#enroll" className="btn btn-accent btn-lg">
+                <a className="btn btn-accent btn-lg" onClick={() => openPopup({ heading: `Book Free Demo Class`, btnText: "Book now", formType: `${page} Footer Book Demo` })}>
                     <FaGraduationCap size={16} /> Book Free Demo Class
                 </a>
                 <a href="tel:+918056477261" className="btn btn-ghost btn-lg">
