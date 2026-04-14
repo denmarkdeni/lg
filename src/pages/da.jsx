@@ -1,7 +1,5 @@
-import React from 'react'; 
-import logo from "../assets/logo.png"
-import Hero from '../sections/hero.jsx';
-import Navbar from '../components/navbar.jsx';
+import React from 'react';  
+import Hero from '../sections/hero.jsx'; 
 import WhatsappFloat from '../components/whatsapp_float.jsx';
 import Footer from '../sections/footer.jsx'; 
 import PainPoints from '../sections/pain_points.jsx';
@@ -23,7 +21,7 @@ export default function DataAnalytics() {
       <DACurriculam />
       <PlacementSupport />
       <Stats />
-      <Pricing />
+      <Pricing course="Data Analytics" />
       <BatchDetails />
       <FAQ /> 
       <ContactBanner />

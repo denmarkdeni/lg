@@ -1,18 +1,27 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaGraduationCap, FaLock } from "react-icons/fa";
+import { FaGraduationCap, FaLock, FaTimes } from "react-icons/fa";
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfRNGeVp0B4WvKGyb1w4QKUJUWL-VZ66H4OpcPJnEv6T8s5y6Z1jgkU8vyJMy8S7op9Q/exec";
+const APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzfRNGeVp0B4WvKGyb1w4QKUJUWL-VZ66H4OpcPJnEv6T8s5y6Z1jgkU8vyJMy8S7op9Q/exec";
 
-function LeadForm() {
+const DEFAULT_CONFIG = {
+  heading: "Start Your IT Career in 90 Days!",
+  btnText: "Get FREE Demo Class",
+  formType: "da_demo",
+};
+
+function LeadForm({ isPopup = false, config = {}, onClose }) {
   const navigate = useNavigate();
+
+  const { heading, btnText, formType } = { ...DEFAULT_CONFIG, ...config };
 
   const [form, setForm] = useState({
     name: "",
     phone: "",
     location: "",
     course: "",
-    form_type: "da_demo",
+    form_type: formType,
   });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -24,42 +33,63 @@ function LeadForm() {
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim())     e.name     = "Name is required";
-    if (!form.phone.trim())    e.phone    = "Phone number is required";
+    if (!form.name.trim()) e.name = "Name is required";
+    if (!form.phone.trim()) e.phone = "Phone number is required";
     else if (!/^[6-9]\d{9}$/.test(form.phone.replace(/\s+/g, "")))
-                               e.phone    = "Enter a valid 10-digit mobile number";
+      e.phone = "Enter a valid 10-digit mobile number";
     if (!form.location.trim()) e.location = "Location is required";
-    if (!form.course)          e.course   = "Please select a course";
+    if (!form.course) e.course = "Please select a course";
     return e;
   };
 
   const handleSubmit = async () => {
     const e = validate();
-    if (Object.keys(e).length) { setErrors(e); return; }
+    if (Object.keys(e).length) {
+      setErrors(e);
+      return;
+    }
 
     setLoading(true);
     try {
       await fetch(APPS_SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors",          // Apps Script requires no-cors
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, form_type: formType }),
       });
-      // no-cors gives opaque response — we assume success if no network error
       navigate("/thank-you");
     } catch (err) {
       console.error("Submission failed:", err);
-      setErrors({ submit: "Something went wrong. Please try again or call us directly." });
+      setErrors({
+        submit: "Something went wrong. Please try again or call us directly.",
+      });
     } finally {
       setLoading(false);
     }
   };
 
-  return (
+  const formCard = (
     <div className="lead-form-card">
+      {/* Close button — only rendered in popup mode */}
+      {isPopup && (
+        <button
+          className="lead-form-close"
+          onClick={onClose}
+          aria-label="Close"
+        >
+          <FaTimes />
+        </button>
+      )}
+
       <h3>
-        <FaGraduationCap style={{ marginRight: 8, color: "var(--clr-primary)",fontSize:"30px" }} />
-        Start Your IT Career in 90 Days!
+        <FaGraduationCap
+          style={{
+            marginRight: 8,
+            color: "var(--clr-primary)",
+            fontSize: "30px",
+          }}
+        />
+        {heading}
       </h3>
 
       <div className="form-group">
@@ -97,7 +127,9 @@ function LeadForm() {
           onChange={handle}
           placeholder="City, State"
         />
-        {errors.location && <span className="form-error">{errors.location}</span>}
+        {errors.location && (
+          <span className="form-error">{errors.location}</span>
+        )}
       </div>
 
       <div className="form-group">
@@ -108,7 +140,9 @@ function LeadForm() {
           value={form.course}
           onChange={handle}
         >
-          <option value="" hidden selected >-- Select Course --</option>
+          <option value="" hidden>
+            -- Select Course --
+          </option>
           <option value="Data Analytics">Data Analytics</option>
           <option value="Python Programming">Python Programming</option>
           <option value="Power BI">Power BI</option>
@@ -132,7 +166,7 @@ function LeadForm() {
             <span className="form-spinner" /> Submitting...
           </>
         ) : (
-          "Get FREE Demo Class"
+          btnText
         )}
       </button>
 
@@ -141,7 +175,18 @@ function LeadForm() {
         100% Free &amp; No Spam. We'll call you within 30 minutes!
       </p>
     </div>
-  );  
+  );
+
+  if (!isPopup) return formCard;
+
+  return (
+    <div
+      className="lead-form-overlay"
+      onClick={(e) => e.target === e.currentTarget && onClose?.()}
+    > 
+      {formCard}
+    </div>
+  );
 }
 
 export default LeadForm;

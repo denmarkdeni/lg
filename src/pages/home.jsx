@@ -18,6 +18,7 @@ import Placements from '../sections/placements.jsx';
 import Feedback from '../sections/feedback.jsx';
 import Classrooms from '../sections/classrooms.jsx';
 import Projects from '../sections/projects.jsx';
+import Branches from '../sections/branches.jsx';
 
 export default function HomePage() {
   return (  
@@ -29,10 +30,11 @@ export default function HomePage() {
       <Feedback  />
       <PlacementSupport />
       <Classrooms />
-      <Pricing />
+      <Pricing course="Home"/>
       <Projects onCta={(src) => openPopup(src)} />
       <BatchDetails />
       <FAQ /> 
+      <Branches /> 
       <ContactBanner />
       <Footer />
       <WhatsappFloat />
