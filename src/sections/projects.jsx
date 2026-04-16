@@ -1,11 +1,79 @@
 import { useState } from "react";
 
-const DEMOS = [
-  { id: "_WtlKB8sqzg", label: "E-Commerce Demo"  },
-  { id: "5ehUZptMNL0", label: "Job Portal Demo"   },
-  { id: "HY3e-TOnKVc", label: "Dashboard Demo"    },
-  { id: "B4RN3Nv57Js", label: "AI Chatbot Demo"   },
+const PROJECTS = [
+  {
+    id: "ecommerce",
+    emoji: "🛒",
+    outcome: "Resume-Ready",
+    name: "E-Commerce App",
+    desc: "Full-featured online store with product listings, cart, checkout, payment integration, and admin dashboard.",
+    stack: ["React", "Spring Boot", "MySQL", "Stripe API"],
+  },
+  {
+    id: "jobportal",
+    emoji: "💼",
+    outcome: "Industry-Level",
+    name: "Job Portal",
+    desc: "Job seekers browse listings, apply, and track applications. Employers post jobs and manage candidates end-to-end.",
+    stack: ["Python", "Django", "React", "PostgreSQL"],
+  },
+  {
+    id: "dashboard",
+    emoji: "📈",
+    outcome: "Data Analyst Project",
+    name: "Data Dashboard",
+    desc: "Interactive analytics dashboard with real-time KPIs, charts, filters, and drill-down capabilities for business decisions.",
+    stack: ["Power BI", "Python", "SQL", "Tableau"],
+  },
+  {
+    id: "chatbot",
+    emoji: "🤖",
+    outcome: "AI Project",
+    name: "AI Chatbot",
+    desc: "Context-aware conversational AI chatbot with NLP, intent recognition, and multi-turn dialog support.",
+    stack: ["Python", "NLP", "Flask", "TensorFlow"],
+  },
+  // {
+  //   id: "sms",
+  //   emoji: "🎓",
+  //   outcome: "Full Stack Project",
+  //   name: "Student Management System",
+  //   desc: "Complete student lifecycle management: admissions, attendance, marks, reports, and notifications.",
+  //   stack: ["Java", "Spring MVC", "React", "MySQL", "JWT Auth"],
+  // },
 ];
+
+const DEMOS = [
+  { id: "ecommerce", demoId: "_WtlKB8sqzg", demoLabel: "E-Commerce Demo" },
+  { id: "jobportal", demoId: "5ehUZptMNL0", demoLabel: "Job Portal Demo" },
+  { id: "dashboard", demoId: "HY3e-TOnKVc", demoLabel: "Dashboard Demo" },
+  { id: "chatbot",   demoId: "B4RN3Nv57Js", demoLabel: "AI Chatbot Demo" },
+  { id: "sms",       demoId: "5ehUZptMNL0", demoLabel: "sms" },
+  { id: "ecommerce", demoId: "_WtlKB8sqzg", demoLabel: "E-Commerce Demo" },
+];
+
+function ProjectCard({ project }) {
+
+  return (
+    <div
+      className={`proj-card reveal${project.wide ? " proj-card--wide" : ""}${open ? " proj-card--open" : ""}`}
+      onClick={() => setOpen((o) => !o)}  
+    >
+      <div className="proj-top">
+        <span className="proj-emoji">{project.emoji}</span>
+        <span className="proj-outcome">{project.outcome}</span>
+      </div>
+      <div className="proj-name">{project.name}</div>
+      <div className="proj-desc">{project.desc}</div>
+      <div className="proj-stack">
+        {project.stack.map((s) => (
+          <span key={s} className="stack-tag">{s}</span>
+        ))}
+      </div>
+
+    </div>
+  );
+}
 
 function DemoCard({ id, label }) {
   const [loaded, setLoaded] = useState(false);
@@ -46,15 +114,21 @@ function Projects({ page, openPopup }) {
         <p>Students build real-time industry projects that go directly into their resume</p>
       </div>
 
-      {/* ── Project Demo Videos ── */}
+      {/* ── Project Cards ── */}
+      <div className="project-cards">
+        {PROJECTS.map((p) => (
+          <ProjectCard key={p.id} project={p} />
+        ))}
+      </div>
+
+      {/* ── Demo Videos ── */}
       <div className="proj-demos-wrap">
         <div className="section-head reveal" style={{ marginBottom: 16 }}>
           <h3 className="proj-demos-title">🎬 Watch Project Demos</h3>
         </div>
-
         <div className="proj-demos reveal">
           {DEMOS.map((d) => (
-            <DemoCard key={d.id} {...d} />
+            <DemoCard key={d.id} id={d.demoId} label={d.demoLabel} />
           ))}
         </div>
       </div>
@@ -63,7 +137,13 @@ function Projects({ page, openPopup }) {
       <div className="proj-cta reveal">
         <button
           className="btn-g"
-          onClick={() => openPopup({ heading: `Start Building Projects Today`, btnText: "Start Today", formType: `${page} Start Today` })}
+          onClick={() =>
+            openPopup({
+              heading: "Start Building Projects Today",
+              btnText: "Start Today",
+              formType: `${page} Start Today`,
+            })
+          }
         >
           🚀 Start Building Projects Today
         </button>
@@ -72,4 +152,4 @@ function Projects({ page, openPopup }) {
   );
 }
 
-export default Projects;    
+export default Projects;

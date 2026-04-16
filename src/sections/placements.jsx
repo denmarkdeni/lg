@@ -34,6 +34,22 @@ const PLACEMENTS = [
     initials:"SM",
     gradient:"linear-gradient(135deg,#8b5cf6,#0B5ED7)",
   },
+  {
+    videoId: "YRaN8Re1_iE",
+    title:   "Placed Student 5",
+    name:    "Rajesh Kumar",
+    company: "TCS",
+    initials:"RK",
+    gradient:"linear-gradient(135deg,#0B5ED7,#1a6ef5)",
+  },
+  {
+    videoId: "q_mdWphcl08",
+    title:   "Placed Student 6",
+    name:    "Priya Devi",
+    company: "Infosys",
+    initials:"PD",
+    gradient:"linear-gradient(135deg,#00C897,#0B5ED7)",
+  },
 ];
 
 function VidCard({ videoId, title, name, company, initials, gradient }) {

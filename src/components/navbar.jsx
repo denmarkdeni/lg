@@ -22,7 +22,7 @@ const NAV_LINKS = [
     ],
   },
   { label: 'Placements', to: '/placements' },
-  { label: 'About Us', to: '/about' },
+  { label: 'About Us', to: '/about-us' },
   { label: 'Contact', to: '/contact' },
 ];
 
