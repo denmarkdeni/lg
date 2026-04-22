@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaGraduationCap, FaLock, FaTimes } from "react-icons/fa";
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzfRNGeVp0B4WvKGyb1w4QKUJUWL-VZ66H4OpcPJnEv6T8s5y6Z1jgkU8vyJMy8S7op9Q/exec";
+  "https://script.google.com/macros/s/AKfycbz-yujT3J2u9TNSndl-FIG22eqGNNUlEgC0GCHzBHfP8w3p1CdDg6L9SZGCxBQYzS8XZQ/exec";
 
 const DEFAULT_CONFIG = {
   heading: "Start Your IT Career in 90 Days!",
