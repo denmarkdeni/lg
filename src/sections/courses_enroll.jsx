@@ -51,6 +51,7 @@ function CourseCard({ course, openPopup , page}) {
             heading: "Book Free Demo Class",
             btnText: "Book Now",
             formType: `${page} - ${course.name} Demo`,
+            course: course.name,
           })
         }
       >

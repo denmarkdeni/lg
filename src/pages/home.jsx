@@ -30,7 +30,7 @@ export default function HomePage() {
       <WhatsappFloat />
       
       {popup && (
-        <LeadForm isPopup={true} config={popup} onClose={closePopup} />
+        <LeadForm isPopup={true} config={popup} onClose={closePopup} page={page}/>
       )}
       
     </>

@@ -3,37 +3,38 @@ import { Link } from 'react-router-dom';
 import { FaGraduationCap, FaChevronDown, FaBars, FaTimes } from 'react-icons/fa';
 
 const NAV_LINKS = [
-  { label: 'Home', to: '/' },
-  {
-    label: 'Courses',
-    dropdown: [
-      { label: 'Data Analytics', to: '/courses/data-analytics' },
-      { label: 'Data Science', to: '/courses/data-science' },
-      { label: 'Python Fullstack', to: '/courses/python' },
-      { label: 'Java Fullstack', to: '/courses/java' },
-    ],
-  },
-  {
-    label: 'Batches',
-    dropdown: [
-      { label: 'Weekday Batch', to: '/batches/weekday' },
-      { label: 'Weekend Batch', to: '/batches/weekend' },
-      { label: 'Online Batch', to: '/batches/online' },
-    ],
-  },
-  { label: 'Placements', to: '/placements' },
-  { label: 'About Us', to: '/about-us' },
-  { label: 'Contact', to: '/contact' },
+  // { label: 'Home', to: '/' },
+  // {
+  //   label: 'Courses',
+  //   dropdown: [
+  //     { label: 'Data Analytics', to: '/courses/data-analytics' },
+  //     { label: 'Data Science', to: '/courses/data-science' },
+  //     { label: 'Python Fullstack', to: '/courses/python' },
+  //     { label: 'Java Fullstack', to: '/courses/java' },
+  //   ],
+  // },
+  // {
+  //   label: 'Batches',
+  //   dropdown: [
+  //     { label: 'Weekday Batch', to: '/batches/weekday' },
+  //     { label: 'Weekend Batch', to: '/batches/weekend' },
+  //     { label: 'Online Batch', to: '/batches/online' },
+  //   ],
+  // },
+  // { label: 'Courses', to: '/courses' },
+  // { label: 'Placements', to: '/placements' },
+  // { label: 'About Us', to: '/about-us' },
+  // { label: 'Contact', to: '/contact' },
 ];
 
 /* ── Dropdown item ─────────────────────────────────────────── */
 function DropdownMenu({ items, visible }) {
   return (
     <div className={`nav-dropdown${visible ? ' nav-dropdown--open' : ''}`}>
-      {items.map((item) => (
-        <Link key={item.label} to={item.to} className="nav-dropdown-item">
-          {item.label}
-        </Link>
+      {items.map((item) => ( 
+          <Link key={item.label} to={item.to} className="nav-dropdown-item">
+            {item.label}
+          </Link>   
       ))}
     </div>
   );

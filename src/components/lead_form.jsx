@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { FaGraduationCap, FaLock, FaTimes } from "react-icons/fa";
 
 const APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbz-yujT3J2u9TNSndl-FIG22eqGNNUlEgC0GCHzBHfP8w3p1CdDg6L9SZGCxBQYzS8XZQ/exec";
+  "https://script.google.com/macros/s/AKfycbzfRNGeVp0B4WvKGyb1w4QKUJUWL-VZ66H4OpcPJnEv6T8s5y6Z1jgkU8vyJMy8S7op9Q/exec";
+  // "https://script.google.com/macros/s/AKfycbz-yujT3J2u9TNSndl-FIG22eqGNNUlEgC0GCHzBHfP8w3p1CdDg6L9SZGCxBQYzS8XZQ/exec";
 
 const DEFAULT_CONFIG = {
   heading: "Start Your IT Career in 90 Days!",
@@ -11,16 +12,16 @@ const DEFAULT_CONFIG = {
   formType: "da_demo",
 };
 
-function LeadForm({ isPopup = false, config = {}, onClose }) {
+function LeadForm({ isPopup = false, config = {}, onClose, page }) {
   const navigate = useNavigate();
-
-  const { heading, btnText, formType } = { ...DEFAULT_CONFIG, ...config };
+  
+  const { heading, btnText, formType, course } = { ...DEFAULT_CONFIG, ...config };
 
   const [form, setForm] = useState({
     name: "",
     phone: "",
     location: "",
-    course: "",
+    course: course,
     form_type: formType,
   });
   const [errors, setErrors] = useState({});
@@ -137,16 +138,27 @@ function LeadForm({ isPopup = false, config = {}, onClose }) {
         <select
           className={`form-control${errors.course ? " form-control--error" : ""}`}
           name="course"
-          value={form.course}
+          value={course}
           onChange={handle}
         >
           <option value="" hidden>
             -- Select Course --
           </option>
-          <option value="Data Analytics">Data Analytics</option>
-          <option value="Python Programming">Python Programming</option>
-          <option value="Power BI">Power BI</option>
-          <option value="SQL for Beginners">SQL for Beginners</option>
+          { (page == "Home Page" )?
+          <>
+            <option value="Java Full Stack">Java Fullstack</option>
+            <option value="Python Full Stack">Python Fullstack</option>
+            <option value="Data Analytics">Data Analytics</option>
+            <option value="Data Science">Data Science</option>
+          </>
+          :
+          <>
+            <option value="Data Analytics">Data Analytics</option>
+            <option value="Python Programming">Python Programming</option>
+            <option value="Power BI">Power BI</option>
+            <option value="SQL for Beginners">SQL for Beginners</option>
+          </>
+          }
         </select>
         {errors.course && <span className="form-error">{errors.course}</span>}
       </div>

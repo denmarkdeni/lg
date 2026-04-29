@@ -41,7 +41,7 @@
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.14);
 
   --max-w: 1140px;
-  --section-py: 80px;
+  --section-py: 40px;
 }
 
 /* ---------- Reset ---------- */
@@ -438,7 +438,7 @@ p  { color: var(--clr-text-muted); }
 .hero {
   background: linear-gradient(135deg, #0f172a 0%, #1a3a6b 60%, #1a56db 100%);
   color: #fff;
-  padding-block: 90px 80px;
+  padding-block: var(--section-py);
   position: relative;
   overflow: hidden;
 }
@@ -949,7 +949,7 @@ p  { color: var(--clr-text-muted); }
 .cta-banner {
   background: linear-gradient(135deg, #0f172a, #1a56db);
   color: #fff;
-  padding-block: 80px;
+  padding-block: var(--section-py);
   text-align: center;
 }
 .cta-banner h2 { color: #fff; margin-bottom: 14px; }
@@ -959,7 +959,7 @@ p  { color: var(--clr-text-muted); }
 /* ---------- Footer ---------- */
 .footer {
   background: var(--clr-bg-dark); 
-  padding-block: 15px;
+  padding-block: var(--section-py);
   font-size: 0.875rem;
   text-align: center;
 }
@@ -1186,7 +1186,7 @@ p  { color: var(--clr-text-muted); }
   /* ── Courses ── */
   .ty-courses {
     border-top: 1px solid var(--clr-border);
-    padding-top: 24px;
+    padding-top: var(--section-py);
   }
   .ty-courses-label {
     font-size: 0.82rem;
@@ -1223,7 +1223,7 @@ p  { color: var(--clr-text-muted); }
 /* ── Hero Video ── */
 .hero-video-section {
   padding-block: var(--section-py); 
-  padding-top: 20px; 
+  padding-top: var(--section-py); 
   margin: 20px; 
 }
 .hero-video-wrap {
@@ -1263,7 +1263,7 @@ p  { color: var(--clr-text-muted); }
 /* ── Intro Section ── */
 .intro {
   text-align: center;
-  padding-block: 60px;
+  padding-block: var(--section-py);
   background: var(--clr-bg);
 }
 
@@ -1942,7 +1942,7 @@ p  { color: var(--clr-text-muted); }
 
   /* ── Home - Courses section ── */
   #courses {
-    padding: 5rem 1.5rem;
+    padding: var(--section-py) 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
   }
