@@ -1262,8 +1262,8 @@ p  { color: var(--clr-text-muted); }
 }
 /* ── Intro Section ── */
 .intro {
-  text-align: center;
-  padding-block: var(--section-py);
+  text-align: center; 
+  padding: var(--section-py);
   background: var(--clr-bg);
 }
 

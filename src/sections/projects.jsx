@@ -48,8 +48,8 @@ const DEMOS = [
   { id: "jobportal", demoId: "5ehUZptMNL0", demoLabel: "Job Portal Demo" },
   { id: "dashboard", demoId: "HY3e-TOnKVc", demoLabel: "Dashboard Demo" },
   { id: "chatbot",   demoId: "B4RN3Nv57Js", demoLabel: "AI Chatbot Demo" },
-  { id: "sms",       demoId: "5ehUZptMNL0", demoLabel: "sms" },
-  { id: "ecommerce", demoId: "_WtlKB8sqzg", demoLabel: "E-Commerce Demo" },
+  { id: "sms",       demoId: "00AeN6O7dMk", demoLabel: "sms" },
+  { id: "ecommerce", demoId: "jNgrtulWPgI", demoLabel: "E-Commerce Demo" },
 ];
 
 function ProjectCard({ project }) {

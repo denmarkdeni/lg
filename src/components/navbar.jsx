@@ -113,13 +113,13 @@ const Navbar = ({ logoImg, logoText, logoLink }) => {
   return (
     <nav className="nav">
       {/* Logo */}
-      <div className="nav-logo">
+      <Link className="nav-logo" to="/">
         {logoImg ? (
           <img src={logoImg} alt="Logo" />
         ) : (
           <FaGraduationCap size={28} color="var(--clr-primary)" />
         )} 
-      </div>
+      </Link>
 
       {/* Desktop links */}
       <div className="nav-links">
