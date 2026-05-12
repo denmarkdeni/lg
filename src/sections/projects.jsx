@@ -45,11 +45,11 @@ const PROJECTS = [
 
 const DEMOS = [
   { id: "ecommerce", demoId: "lXkMkw2SIME", demoLabel: "Java Game Development" },
-  { id: "jobportal", demoId: "5ehUZptMNL0", demoLabel: "Job Portal Demo" },
-  { id: "dashboard", demoId: "Dgo4616Gul0", demoLabel: "Finance Health" },
+  { id: "jobportal", demoId: "5ehUZptMNL0", demoLabel: "Investment App Design" },
+  { id: "dashboard", demoId: "Dgo4616Gul0", demoLabel: "Finance Health Check" },
   { id: "chatbot",   demoId: "B4RN3Nv57Js", demoLabel: "Inventory Management" },
-  { id: "sms",       demoId: "aqN6q4ouGr8", demoLabel: "Luxury Boutique" },
-  { id: "ecommerce", demoId: "jNgrtulWPgI", demoLabel: "E-Commerce Demo" },
+  { id: "sms",       demoId: "aqN6q4ouGr8", demoLabel: "Luxury Boutique Marketing" },
+  { id: "ecommerce", demoId: "jNgrtulWPgI", demoLabel: "Github & S3 Deployment" },
 ];
 
 function ProjectCard({ project }) {

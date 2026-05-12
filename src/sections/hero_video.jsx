@@ -36,8 +36,7 @@ function HeroVideo() {
   const isLoaded = loadedMap[current];
 
   const src =
-    `https://www.youtube.com/embed/${video.id}` +
-    `?autoplay=1&start=${video.start}`;
+    `https://www.youtube.com/embed/${video.id}` + `?autoplay=0&start=${video.start}`;
 
   return (
     <section className="hero-video-section" aria-label="Video carousel">

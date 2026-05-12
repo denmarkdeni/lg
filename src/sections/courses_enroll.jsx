@@ -14,7 +14,7 @@ const COURSES = [
     icon: <FaPython size={48} color="#3776ab" />,
     name: "Python Full Stack",
     duration: "3–4 Months",
-    tools: ["Python", "Django", "React", "PostgreSQL", "REST API", "AWS"],
+    tools: ["Python", "Django", "React", "PostgreSQL", "REST API"],
   },
   {
     id: "da",
@@ -28,7 +28,7 @@ const COURSES = [
     icon: <FaBrain size={48} color="#a855f7" />,
     name: "Data Science",
     duration: "4 Months",
-    tools: ["Python", "ML", "Pandas", "Scikit-learn", "Deep Learning", "NLP"],
+    tools: ["Python", "ML", "Pandas", "Scikit-learn", "Deep Learning"],
   },
 ];
 
