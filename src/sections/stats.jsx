@@ -9,7 +9,7 @@ const TRUST_CARDS = [
 
 function Stats({ onBookDemo, onApply , page , openPopup }) {
   return (
-    <section className="section intro" id="intro">
+    <section className="section intro alt" id="intro">
       <div className="intro-badge reveal">
         🏆 Chennai's #1 Placement-Focused Institute
       </div>

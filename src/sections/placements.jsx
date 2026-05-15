@@ -9,7 +9,7 @@ const REELS = [
   
   function Placements() {
     return (
-      <section className="section" id="feedback">
+      <section className="section alt" id="feedback">
         <div className="section-head reveal">
           <span className="section-tag">Placements</span>
           <h2>Real Students. Real Placements</h2>

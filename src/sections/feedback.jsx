@@ -92,7 +92,7 @@ function VidCard({ videoId, title, name, company, initials, gradient }) {
 
 function Feedback() {
   return (
-    <section className="section alt" id="placements">
+    <section className="section" id="placements">
       <div className="section-head reveal">
         <span className="section-tag">Student Love</span>
         <h2>What Our Students Say ❤️</h2>

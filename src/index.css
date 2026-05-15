@@ -41,7 +41,8 @@
   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.14);
 
   --max-w: 1140px;
-  --section-py: 40px;
+  --section-py: 20px;
+  --section-px: 40px;
 }
 
 /* ---------- Reset ---------- */
@@ -78,6 +79,7 @@ p  { color: var(--clr-text-muted); }
 }
 .section {
   padding-block: var(--section-py);
+  /* padding: var(--section-py) 1.5rem; */
 }
 .section--alt {
   background: var(--clr-bg-alt);
@@ -949,7 +951,7 @@ p  { color: var(--clr-text-muted); }
 .cta-banner {
   background: linear-gradient(135deg, #0f172a, #1a56db);
   color: #fff;
-  padding-block: var(--section-py);
+  padding-block: var(--section-px);
   text-align: center;
 }
 .cta-banner h2 { color: #fff; margin-bottom: 14px; }
@@ -1222,9 +1224,9 @@ p  { color: var(--clr-text-muted); }
  
 /* ── Hero Video ── */
 .hero-video-section {
-  padding-block: var(--section-py); 
+  /* padding-block: var(--section-py);  */
   padding-top: var(--section-py); 
-  margin: 20px; 
+  /* margin: 20px;  */
 }
 .hero-video-wrap {
   position: relative;
@@ -1232,7 +1234,7 @@ p  { color: var(--clr-text-muted); }
   margin-inline: auto;
   padding-inline: 24px;
   aspect-ratio: 16 / 9;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
 }
@@ -1321,7 +1323,7 @@ p  { color: var(--clr-text-muted); }
 /* ── Intro Section ── */
 .intro {
   text-align: center; 
-  padding: var(--section-py);
+  padding: var(--section-py) 1.5em;
   background: var(--clr-bg);
 }
 
@@ -1499,6 +1501,7 @@ p  { color: var(--clr-text-muted); }
 .section-head {
   text-align: center;
   margin-bottom: 48px;
+  padding: 0 1rem;
 }
 .section-head h2 { margin-bottom: 10px; }
 .section-head p  { color: var(--clr-text-muted); font-size: 1rem; }
@@ -1846,7 +1849,7 @@ p  { color: var(--clr-text-muted); }
 }
 /* ── Section shell ── */
 .section#branches {
-  padding: 5rem 1.5rem;
+  padding: var(--section-py) 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }

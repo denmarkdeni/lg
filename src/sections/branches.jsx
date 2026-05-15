@@ -57,7 +57,7 @@ const BRANCHES = [
   
   function Branches() {
     return (
-      <section className="section" id="branches">
+      <section className="section alt" id="branches">
         <div className="section-head reveal shown">
           <span className="section-tag"> Locations</span>
           <h2>
