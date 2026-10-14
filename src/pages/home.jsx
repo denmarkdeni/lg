@@ -21,7 +21,7 @@ export default function HomePage() {
   
   return (  
     <>    
-      <ToastMessagePlacements message="New Batch starting on Oct 12" actionText="Enroll now" openPopup={openPopup} page={page}/>
+      <ToastMessagePlacements message="✨ New Batches Starting Soon!" actionText="Enroll now" openPopup={openPopup} page={page}/>
       <HeroVideo />
       <Stats page={page} openPopup={openPopup}/>
       <Courses page={page} openPopup={openPopup}/>
